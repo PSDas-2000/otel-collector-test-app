@@ -1,0 +1,26 @@
+receivers:
+  prometheus:
+      config:
+        scrape_configs:
+          - job_name: 'prom-metric-test-app'
+            scrape_interval: 10s
+            static_configs:
+              - targets: ['metrics-producer-app:8080']
+
+exporters:
+  prometheus:
+    endpoint: prometheus:1234
+    namespace: test-app
+
+extensions:
+  health_check:
+  pprof:
+  zpages:
+
+service:
+  extensions: [health_check, pprof, zpages]
+  pipelines:
+    metrics:
+      receivers: [prometheus]
+      processors: []
+      exporters: [prometheus]
