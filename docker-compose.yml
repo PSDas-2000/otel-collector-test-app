@@ -12,7 +12,6 @@ services:
     image: paramsdas/prom-2.45-alpine-3.18:0.0.1
     ports:
       - 9090:9090
-      - 1234:1234
     networks:
       - stack-network
     volumes:
@@ -26,6 +25,7 @@ services:
     - 8889:8889 # Prometheus exporter metrics
     - 13133:13133 # health_check extension
     - 55679:55679 # zpages extension
+    - 1234:1234
     volumes:
     - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
     networks:

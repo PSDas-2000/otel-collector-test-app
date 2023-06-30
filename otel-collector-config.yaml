@@ -9,7 +9,7 @@ receivers:
 
 exporters:
   prometheus:
-    endpoint: prometheus:1234
+    endpoint: otel-collector:1234
     namespace: test-app
 
 extensions:
