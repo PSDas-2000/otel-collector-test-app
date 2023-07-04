@@ -26,10 +26,9 @@ services:
     - 13133:13133 # health_check extension
     - 55679:55679 # zpages extension
     - 1234:1234
-    expose:
-      - 1234
+    command: [--config=/etc/otel-collector-config.yaml]
     volumes:
-    - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml # default location is /etc/otelcol-contrib/config.yaml
     networks:
       - stack-network
 
