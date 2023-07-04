@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   metrics-producer-app:
-    image: paramsdas/nodejs-app-with-prom-metrics:0.0.1
+    image: paramsdas/nodejs-app-with-prom-metrics:0.0.2
     ports:
       - 80:8080
     networks:
@@ -26,6 +26,8 @@ services:
     - 13133:13133 # health_check extension
     - 55679:55679 # zpages extension
     - 1234:1234
+    expose:
+      - 1234
     volumes:
     - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
     networks:

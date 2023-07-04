@@ -3,11 +3,11 @@ scrape_configs:
       scrape_interval: 10s
       static_configs:
         - targets: ['otel-collector:1234']
-    - job_name: 'test-app'
-      scrape_interval: 10s
-      static_configs:
-        - targets: ['metrics-producer-app:8080']
-    - job_name: 'otel-collector-individual'
-      scrape_interval: 10s
-      static_configs:
-        - targets: ['otel-collector:8888']
+    # - job_name: 'test-app'
+    #   scrape_interval: 10s
+    #   static_configs:
+    #     - targets: ['metrics-producer-app:8080']
+    # - job_name: 'otel-collector-individual'
+    #   scrape_interval: 10s
+    #   static_configs:
+    #     - targets: ['otel-collector:8888']

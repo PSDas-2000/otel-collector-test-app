@@ -10,7 +10,6 @@ receivers:
 exporters:
   prometheus:
     endpoint: otel-collector:1234
-    namespace: test-app
 
 extensions:
   health_check:
